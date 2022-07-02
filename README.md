@@ -7,6 +7,8 @@ Supported algorithm:
 
 Use System Property (supported.Internal.field.type) to set you target field types.
 
+![module 01](https://user-images.githubusercontent.com/37014061/177011009-1cdca300-12f9-439b-b4fb-fa8b17b92352.JPG)
+
 ![form 01](https://user-images.githubusercontent.com/37014061/177010439-ff2b8ff6-8656-424d-bc72-9ab9eebb1b82.JPG)
 
 You can confiigure your own regex / type pattern:
