@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="History" max_length="40" name="x_307427_table_a_0_history" type="collection">
+        <element label="Anonymizer" max_length="32" name="anonymizer" read_only="true" reference="x_307427_table_a_0_anonymizer" type="reference"/>
+        <element label="Field" max_length="200" name="field" read_only="true" type="string"/>
+        <element dependent="table" dependent_on_field="table" label="Record" max_length="32" name="record" read_only="true" type="document_id" use_dependent_field="true"/>
+        <element choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Anonymized" sequence="100" value="anonymized"/>
+                <element inactive_on_update="false" label="Deleted" sequence="200" value="deleted"/>
+            </choice>
+        </element>
+        <element label="Table" max_length="80" name="table" read_only="true" type="table_name"/>
+        <index name="index">
+            <element name="record"/>
+        </index>
+        <index name="index2">
+            <element name="anonymizer"/>
+        </index>
+    </element>
+</database>
