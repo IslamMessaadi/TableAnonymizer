@@ -1,6 +1,6 @@
 # TableAnonymizer
 Servicenow Table data anonymizer simple tool helps you to anonymize/delete (calendar history) your data with full control. 
-Supported algorithm:
+Supported algorithms:
 + MD5
 + SHA1
 + SHA256
@@ -11,7 +11,7 @@ Use System Property (supported.Internal.field.type) to set you target field type
 
 ![form 01](https://user-images.githubusercontent.com/37014061/177010439-ff2b8ff6-8656-424d-bc72-9ab9eebb1b82.JPG)
 
-You can confiigure your own regex / type pattern:
+You can configure your own regex / type pattern:
 Supported options (v 1.0.0):
 + Email
 + Phone
