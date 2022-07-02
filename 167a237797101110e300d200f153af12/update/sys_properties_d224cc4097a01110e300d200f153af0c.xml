@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>The element's internal data type, possible values:&#13;
+boolean&#13;
+char&#13;
+collection&#13;
+conditions&#13;
+date&#13;
+decimal&#13;
+documentation_field&#13;
+domain_id&#13;
+due_date&#13;
+email&#13;
+field_name&#13;
+file_attachment&#13;
+float&#13;
+glide_date&#13;
+glide_date_time&#13;
+glide_duration&#13;
+glide_list&#13;
+GUID&#13;
+html&#13;
+image&#13;
+integer&#13;
+long&#13;
+longint&#13;
+multi_two_lines&#13;
+journal&#13;
+journal_input&#13;
+numeric&#13;
+order_index&#13;
+password&#13;
+ph_number&#13;
+reference&#13;
+script&#13;
+script_plain&#13;
+string&#13;
+sys_class_name&#13;
+table_name&#13;
+template_value&#13;
+timer&#13;
+translated_field&#13;
+url&#13;
+user_image&#13;
+user_input&#13;
+user_roles&#13;
+video&#13;
+workflow</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_307427_table_a_0.supported.Internal.field.type</name>
+        <read_roles/>
+        <suffix>supported.Internal.field.type</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-02 12:45:39</sys_created_on>
+        <sys_id>d224cc4097a01110e300d200f153af0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_307427_table_a_0.supported.Internal.field.type</sys_name>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_properties_d224cc4097a01110e300d200f153af0c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-02 12:45:39</sys_updated_on>
+        <type>string</type>
+        <value>email,html,url,translated_field,ph_number,string</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=d224cc4097a01110e300d200f153af0c"/>
+</record_update>
