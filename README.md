@@ -1,5 +1,5 @@
 # TableAnonymizer
-Servicenow Table data anonymizer simple tool helps you to anonymize your data with full control. 
+Servicenow Table data anonymizer simple tool helps you to anonymize/delete (calendar history) your data with full control. 
 Supported algorithm:
 + MD5
 + SHA1
