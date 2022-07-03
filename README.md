@@ -17,6 +17,7 @@ Use System Property (supported.Internal.field.type) to set you target field type
 In order to delete the history line data! You have to check canDelete option on table configuration levele for these 2 tables:
 + sys_history_line
 + sys_audit
++ sys_journal_field
 
 # ScreenShots:
 
