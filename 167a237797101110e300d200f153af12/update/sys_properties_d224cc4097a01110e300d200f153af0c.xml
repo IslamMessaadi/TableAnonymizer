@@ -28,6 +28,7 @@ longint&#13;
 multi_two_lines&#13;
 journal&#13;
 journal_input&#13;
+journal_list&#13;
 numeric&#13;
 order_index&#13;
 password&#13;
@@ -56,16 +57,16 @@ workflow</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-02 12:45:39</sys_created_on>
         <sys_id>d224cc4097a01110e300d200f153af0c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>x_307427_table_a_0.supported.Internal.field.type</sys_name>
         <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
         <sys_policy/>
         <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
         <sys_update_name>sys_properties_d224cc4097a01110e300d200f153af0c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-02 12:45:39</sys_updated_on>
+        <sys_updated_on>2022-07-03 12:14:36</sys_updated_on>
         <type>string</type>
-        <value>email,html,url,translated_field,ph_number,string</value>
+        <value>email,html,url,translated_field,ph_number,string,journal_input,journal,journal_list</value>
         <write_roles/>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=d224cc4097a01110e300d200f153af0c"/>
