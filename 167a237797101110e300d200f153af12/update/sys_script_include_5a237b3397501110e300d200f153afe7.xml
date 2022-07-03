@@ -59,8 +59,6 @@ anonymizerUtil.prototype = {
 	},
 
 	anonymize:function(configGr){
-		gs.addInfoMessage("Anonymizing data has been started!");
-		configGr.processing.setError("ON");
 		configGr.processing= true;
 		configGr.update();
 		
@@ -82,7 +80,6 @@ anonymizerUtil.prototype = {
 			fnCrypto= "getSHA256Base64";
 		}
 
-		//var historyArr=[];
 		var historyGr= new GlideRecord("x_307427_table_a_0_history");
 		var rec = new GlideRecord(table);
 		rec.addEncodedQuery(q);
@@ -100,8 +97,7 @@ anonymizerUtil.prototype = {
 						rec.setValue(field, ndata);
 						rec.update();
 
-						if(rec.isValidRecord() /*&& historyArr.indexOf(field) == -1*/ && !that.hasIt(configGr.sys_id, table, field, rec.sys_id)) {
-							//historyArr.push(field);
+						if(rec.isValidRecord() && !that.hasIt(configGr.sys_id, table, field, rec.sys_id)) {
 							historyGr.initialize();
 							historyGr.anonymizer= configGr.sys_id;
 							historyGr.table= table;
@@ -114,8 +110,7 @@ anonymizerUtil.prototype = {
 				}
 			});
 		}
-		gs.addInfoMessage("Anonymizing data has been Stoped!");
-		configGr.processing.setError("OFF");
+		
 		configGr.processing= false;
 		configGr.update();
 	},
@@ -129,6 +124,24 @@ anonymizerUtil.prototype = {
 		}
 		return false;
 	},
+	
+	canClearTable:function(configGr){
+		var rec = new GlideRecord("x_307427_table_a_0_history");
+		rec.addEncodedQuery("anonymizer=" + configGr.sys_id);
+		rec.query();
+		if(rec.next()){
+			return true;
+		}
+		return false;
+	},
+	
+	clearTable:function(configGr){
+		var rec = new GlideRecord("x_307427_table_a_0_history");
+		rec.addEncodedQuery("anonymizer=" + configGr.sys_id);
+		rec.query();
+		rec.deleteMultiple();
+	},
+	
 	
 	hasIt:function(anonymizer, table, field, recordId){
 		var rec = new GlideRecord("x_307427_table_a_0_history");
@@ -155,7 +168,6 @@ anonymizerUtil.prototype = {
 	},
 	
 	deleteAll:function(configGr){
-		gs.addInfoMessage("Deleting data has been started!");
 		configGr.processing= true;
 		configGr.update();
 		
@@ -169,7 +181,6 @@ anonymizerUtil.prototype = {
 			rec.update();
 		}
 		
-		gs.addInfoMessage("Deleting data has been Stoped!");
 		configGr.processing= false;
 		configGr.update();
 	},
@@ -180,13 +191,13 @@ anonymizerUtil.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-02 11:55:34</sys_created_on>
         <sys_id>5a237b3397501110e300d200f153afe7</sys_id>
-        <sys_mod_count>109</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>anonymizerUtil</sys_name>
         <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
         <sys_update_name>sys_script_include_5a237b3397501110e300d200f153afe7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-02 17:10:17</sys_updated_on>
+        <sys_updated_on>2022-07-03 10:33:44</sys_updated_on>
     </sys_script_include>
 </record_update>

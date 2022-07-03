@@ -27,7 +27,7 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Clear History</name>
+        <name>Delete History Line</name>
         <onclick/>
         <order>100</order>
         <script><![CDATA[new anonymizerUtil().deleteAll(current);
@@ -43,15 +43,15 @@ action.setRedirectURL(current);
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d840700097641110e300d200f153afb6</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>Clear History</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Delete History Line</sys_name>
         <sys_overrides/>
         <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
         <sys_policy/>
         <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
         <sys_update_name>sys_ui_action_d840700097641110e300d200f153afb6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-02 16:26:43</sys_updated_on>
+        <sys_updated_on>2022-07-03 10:30:28</sys_updated_on>
         <table>x_307427_table_a_0_anonymizer</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
