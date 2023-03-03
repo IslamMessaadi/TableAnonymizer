@@ -4,97 +4,125 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>bef6b73797501110e300d200f153af6c</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>c7fd342e47552110042e8c38c26d43df</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>active</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>32f6b73797501110e300d200f153af6d</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>2</position>
+            <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>b2f6b73797501110e300d200f153af6d</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>4bfd342e47552110042e8c38c26d43df</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>target</element>
-            <position>3</position>
+            <element>algorithm</element>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>36f6b73797501110e300d200f153af6d</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>cbfd342e47552110042e8c38c26d43df</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>algorithm</element>
-            <position>4</position>
+            <element>active</element>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>b6f6b73797501110e300d200f153af6d</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>4ffd342e47552110042e8c38c26d43df</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>5</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>3af6b73797501110e300d200f153af6d</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>cffd342e47552110042e8c38c26d43df</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>short_description</element>
-            <position>6</position>
+            <element>regex</element>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 11:46:13</sys_created_on>
-            <sys_id>baf6b73797501110e300d200f153af6d</sys_id>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>43fd342e47552110042e8c38c26d43e0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 11:46:13</sys_updated_on>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>custom_algorithm</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>c3fd342e47552110042e8c38c26d43e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-03 14:19:29</sys_created_on>
+            <sys_id>47fd342e47552110042e8c38c26d43e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-03 14:19:29</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>prompt</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-03 19:56:25</sys_created_on>
+            <sys_id>5e1bce2647992110042e8c38c26d4307</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_table_a_0_patterns" sys_domain="global" view="Default view">ac7febfb97101110e300d200f153af2f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-03 19:56:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

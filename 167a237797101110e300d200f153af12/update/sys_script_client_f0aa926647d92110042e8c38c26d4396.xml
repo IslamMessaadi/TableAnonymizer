@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>processing</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Processing Info</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading) {
+      return;
+   }
+
+   g_form.clearMessages();
+   if (newValue == "true") {
+       getMessage("anon.process.on.info", function(msg) {
+           g_form.addInfoMessage(msg);
+       });
+   } else {
+       getMessage("anon.process.off.info", function(msg) {
+           g_form.addInfoMessage(msg);
+       });
+   }
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-03 21:10:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f0aa926647d92110042e8c38c26d4396</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Processing Info</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_script_client_f0aa926647d92110042e8c38c26d4396</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-03 21:13:08</sys_updated_on>
+        <table>x_307427_table_a_0_anonymizer</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

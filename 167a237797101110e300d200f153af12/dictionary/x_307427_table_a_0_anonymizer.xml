@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Anonymizer" max_length="40" name="x_307427_table_a_0_anonymizer" sizeclass="2" type="collection">
+    <element db_object_id="b76e3b8e47152110042e8c38c26d43bd" label="Anonymizer" max_length="40" name="x_307427_table_a_0_anonymizer" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element dependent="table" dependent_on_field="table" label="Filter" max_length="4000" name="filter" type="conditions" use_dependent_field="true"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Output" max_length="200" name="output" read_only="true" type="string"/>
         <element label="Patterns" mandatory="true" max_length="32" name="patterns" reference="x_307427_table_a_0_patterns" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
         <element label="Processing" max_length="40" name="processing" read_only="true" type="boolean"/>
         <element label="Short Description" max_length="500" name="short_description" type="translated_text"/>

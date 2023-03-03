@@ -8,8 +8,7 @@
         <configuration_access>false</configuration_access>
         <create_access>false</create_access>
         <create_access_controls>true</create_access_controls>
-        <delete_access>true</delete_access>
-        <extension_model/>
+        <delete_access>false</delete_access>
         <is_extendable>false</is_extendable>
         <label>History</label>
         <live_feed_enabled>false</live_feed_enabled>
@@ -19,20 +18,18 @@
         <read_access>true</read_access>
         <scriptable_table>false</scriptable_table>
         <super_class/>
-        <sys_class_code/>
         <sys_class_name>sys_db_object</sys_class_name>
-        <sys_class_path/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-02 15:25:08</sys_created_on>
-        <sys_id>f4f8e8c497241110e300d200f153af30</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_id>f76e3b8e47152110042e8c38c26d43de</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>History</sys_name>
         <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
         <sys_policy/>
         <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
-        <sys_update_name>sys_db_object_f4f8e8c497241110e300d200f153af30</sys_update_name>
+        <sys_update_name>sys_db_object_f76e3b8e47152110042e8c38c26d43de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-03 10:43:47</sys_updated_on>
+        <sys_updated_on>2023-03-03 08:30:43</sys_updated_on>
         <update_access>false</update_access>
         <user_role display_value="x_307427_table_a_0.admin" name="x_307427_table_a_0.admin">4bbce73b97101110e300d200f153afa5</user_role>
         <ws_access>true</ws_access>

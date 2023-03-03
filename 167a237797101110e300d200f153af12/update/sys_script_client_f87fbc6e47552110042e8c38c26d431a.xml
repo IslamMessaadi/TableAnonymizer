@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Generate encryption function</name>
+        <order/>
+        <script><![CDATA[try{
+   var $doc= (top.gsft_main)?top.gsft_main.document:top.document;
+   $doc.observe('DOMContentLoaded',function(){
+   var alGDOM = g_form.getControl("custom_algorithm");
+
+   var container = $doc.createElement('div');
+   container.style.display = 'flex';
+   container.style.flexDirection = 'row-reverse';
+   container.style.width = '100%';
+
+   var button = $doc.createElement('button');
+   button.textContent = 'Generate encryption function';
+   button.style.backgroundColor = 'cornsilk';
+
+   button.addEventListener('click', function(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      g_form.setValue("custom_algorithm", "//Fetching data...");
+      chatgpt();
+      return false;
+   });
+    
+
+   container.appendChild(button);
+   alGDOM.parentElement.appendChild(container);
+
+   });
+}catch(err){
+   /*debugger tool*/
+   //console.log('%c'+err.message,'color:red; font-size: 15px');
+}
+
+function chatgpt() {
+   var raw = JSON.stringify({
+   "model": "text-davinci-003",
+   "prompt": g_form.getValue("prompt"),
+   "temperature": 0.6,
+   "max_tokens": 2000,
+   });
+   fetch('https://api.openai.com/v1/completions', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json',
+         'Authorization': 'Bearer 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'
+      },
+      body: raw
+   })
+   .then(function(response) {
+      return response.json()
+   })
+   .then(function(data) {
+      g_form.setValue("custom_algorithm", data.choices[0].text.trim());
+   })
+   .catch(function(error) {
+      //console.error(error);
+   });
+}
+
+function onLoad() {}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-03 14:29:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f87fbc6e47552110042e8c38c26d431a</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>Generate encryption function</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_script_client_f87fbc6e47552110042e8c38c26d431a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-03 20:40:19</sys_updated_on>
+        <table>x_307427_table_a_0_patterns</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

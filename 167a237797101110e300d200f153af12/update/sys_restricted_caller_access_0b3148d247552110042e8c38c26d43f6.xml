@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
+    <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <description/>
+        <operation>delete</operation>
+        <rca_type>real_rca</rca_type>
+        <source/>
+        <source_scope display_value="Global">global</source_scope>
+        <source_table/>
+        <source_type>5</source_type>
+        <status>2</status>
+        <sys_class_name>sys_restricted_caller_access</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-02 15:15:35</sys_created_on>
+        <sys_id>0b3148d247552110042e8c38c26d43f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global</sys_name>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_restricted_caller_access_0b3148d247552110042e8c38c26d43f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-02 15:15:35</sys_updated_on>
+        <target name="sys_journal_field" target_table="sys_db_object">5e172520a920211076daa554cb57d954</target>
+        <target_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</target_scope>
+        <target_table>sys_db_object</target_table>
+        <target_type>1</target_type>
+    </sys_restricted_caller_access>
+</record_update>

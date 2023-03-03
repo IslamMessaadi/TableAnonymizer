@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Patterns" max_length="40" name="x_307427_table_a_0_patterns" sizeclass="2" type="collection">
+    <element db_object_id="b36e3b8e47152110042e8c38c26d438e" label="Patterns" max_length="40" name="x_307427_table_a_0_patterns" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
-        <element choice="1" default="md5" label="Algorithm" mandatory="true" max_length="40" name="algorithm" type="choice">
+        <element choice="1" default="getMD5Base64" label="Algorithm" mandatory="true" max_length="40" name="algorithm" type="choice">
             <choice>
-                <element inactive_on_update="false" label="MD5" sequence="100" value="md5"/>
-                <element inactive_on_update="false" label="SHA1" sequence="200" value="sha"/>
-                <element inactive_on_update="false" label="SHA256" sequence="300" value="sha256"/>
+                <element inactive_on_update="false" label="MD5" sequence="100" value="getMD5Base64"/>
+                <element inactive_on_update="false" label="SHA1" sequence="200" value="getSHA1Base64"/>
+                <element inactive_on_update="false" label="SHA256" sequence="300" value="getSHA256Base64"/>
+                <element inactive_on_update="false" label="Custom Algorithm" sequence="400" value="custom"/>
             </choice>
         </element>
+        <element label="Custom Algorithm" max_length="500" name="custom_algorithm" type="script"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="Create a JavaScript variable called &quot;str&quot;. Create a JavaScript function that takes a string input &quot;str&quot; and returns an encrypted version of the string using a custom encryption algorithm. This  custom encryption algorithm based on arithmetic and bitwise operations. The function should not use any external libraries or dependencies and should produce a unique encrypted string for each input string. Please write the function using ECMAScript 5 syntax. Please write the function using var keyword instead of let and const. Once the function is generated, write this function invocation expression that calls this function with str variable. Without a sample string input to test its functionality." label="Prompt" max_length="500" name="prompt" type="string"/>
+        <element label="RegEx" mandatory="true" max_length="200" name="regex" type="string"/>
         <element label="Short Description" max_length="500" name="short_description" type="translated_text"/>
-        <element label="Target" mandatory="true" max_length="4000" name="target" type="glide_list"/>
     </element>
 </database>

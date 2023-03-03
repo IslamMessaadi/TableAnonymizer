@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>custom_algorithm</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-03 20:34:23</sys_created_on>
+        <sys_id>cab3da6e47992110042e8c38c26d4321</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>custom_algorithm</sys_name>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_ui_policy_action_cab3da6e47992110042e8c38c26d4321</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-03 20:34:23</sys_updated_on>
+        <table>x_307427_table_a_0_patterns</table>
+        <ui_policy display_value="Hide &amp; Show Custom Algorithm">1e139e2e47992110042e8c38c26d43c0</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+</record_update>

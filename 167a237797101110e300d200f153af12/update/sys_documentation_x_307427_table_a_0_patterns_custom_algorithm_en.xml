@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="custom_algorithm" label="Custom Algorithm" language="en" table="x_307427_table_a_0_patterns">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>custom_algorithm</element>
+            <help/>
+            <hint/>
+            <label>Custom Algorithm</label>
+            <language>en</language>
+            <name>x_307427_table_a_0_patterns</name>
+            <plural>Custom Algorithms</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-03-03 14:18:41</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Custom Algorithm</sys_name>
+            <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+            <sys_update_name>sys_documentation_x_307427_table_a_0_patterns_custom_algorithm_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-03-03 14:18:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

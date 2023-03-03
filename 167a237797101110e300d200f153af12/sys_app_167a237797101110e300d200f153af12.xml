@@ -17,7 +17,7 @@
         <name>Table Anonymizer</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
-        <runtime_access_tracking>permissive</runtime_access_tracking>
+        <runtime_access_tracking/>
         <scope>x_307427_table_a_0</scope>
         <scoped_administration>false</scoped_administration>
         <short_description>Anonymizing data tool</short_description>
@@ -29,9 +29,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-02 10:51:33</sys_created_on>
         <sys_id>167a237797101110e300d200f153af12</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-02 17:16:06</sys_updated_on>
+        <sys_updated_on>2023-03-02 15:16:06</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
@@ -40,6 +40,7 @@
         <vendor_prefix/>
         <version>1.0.0</version>
     </sys_app>
+    <sys_translated_text action="delete_multiple" query="documentkey=167a237797101110e300d200f153af12"/>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#dbdbdb</average_image_color>
         <chunk_size_bytes>700000</chunk_size_bytes>
