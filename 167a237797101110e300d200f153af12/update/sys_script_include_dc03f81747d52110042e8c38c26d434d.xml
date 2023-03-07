@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_307427_table_a_0.deanonymizerUtil</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>deanonymizerUtil</name>
+        <script><![CDATA[var deanonymizerUtil = Class.create();
+deanonymizerUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	JFLIST: ["work_notes", "comments"],
+
+	deAnonSelected:function(){
+		var that = this;
+		var trgDe=[];
+		var histList= this.getParameter('sysparm_trg_de_anon_hist').split(",");
+		if(histList.length){
+			histList.forEach(function(histId) {
+				var rec= new GlideRecord("x_307427_table_a_0_history");
+				rec.get(""+histId);
+				rec.status= "deanonymized";
+				rec.update();
+
+				trgDe.push({t: "" + rec.table,
+					id: ""+rec.record,
+					f: ""+rec.field,
+					d: ""+rec.detected_value,
+					e: ""+rec.encrypted_value});
+			});
+		}
+		
+		if(trgDe.length){
+			trgDe.forEach(function(rO) {
+				if(that.JFLIST.indexOf(rO.f) != -1){
+					that.deAnonJHAll(rO);
+				}else{
+					var tgr = new GlideRecord(rO.t);
+					tgr.get(rO.id);
+					if (tgr.isValidRecord()) {
+						var ndata= tgr[rO.f].replace(new RegExp(rO.e, 'gm'), rO.d);
+						tgr.setValue(rO.f, ndata);
+						tgr.update();
+					}
+				}
+			});
+		}
+	},
+
+	deAnonHL:function(rO){
+		var rec = new GlideRecord('sys_history_line');
+		rec.addEncodedQuery('field='+rO.f+'^set.id='+rO.id);
+		rec.query();
+		while(rec.next()){
+			var rgx= new RegExp(rO.e, 'gm');
+			if(rgx.test(rec["new"])){
+				rec["new"]= rec["new"].replace(rgx, rO.d);
+				rec.update();
+			}
+			if(rgx.test(rec["old"])){
+				rec["old"]= rec["old"].replace(rgx, rO.d);
+				rec.update();
+			}
+		}
+	},
+
+	deAnonHJ:function(rO){
+		var rec = new GlideRecord('sys_journal_field');
+		rec.addEncodedQuery('name='+rO.t+'^element='+rO.f+'^element_id='+rO.id);
+		rec.query();
+		while(rec.next()){
+			var rgx= new RegExp(rO.e, 'gm');
+			if(rgx.test(rec.value)){
+				rec.value= rec["value"].replace(rgx, rO.d);
+				rec.update();
+			}
+		}
+	},
+
+	deAnonHAudit:function(rO){
+		var rec = new GlideRecord('sys_audit');
+		rec.addEncodedQuery('tablename='+rO.t+'^fieldname='+rO.f+'^documentkey='+rO.is);
+		rec.query();
+		while(rec.next()){
+			var rgx= new RegExp(rO.e, 'gm');
+			if(rgx.test(rec["newvalue"])){
+				rec["newvalue"]= rec["newvalue"].replace(rgx, rO.d);
+				rec.update();
+			}
+			if(rgx.test(rec["oldvalue"])){
+				rec["oldvalue"]= rec["oldvalue"].replace(rgx, rO.d);
+				rec.update();
+			}
+		}
+	},
+
+	deAnonJHAll:function(rO){
+		this.deAnonHL(rO);
+		this.deAnonHAudit(rO);
+		this.deAnonHJ(rO);
+	},
+	
+    type: 'deanonymizerUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-05 21:28:25</sys_created_on>
+        <sys_id>dc03f81747d52110042e8c38c26d434d</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>deanonymizerUtil</sys_name>
+        <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
+        <sys_update_name>sys_script_include_dc03f81747d52110042e8c38c26d434d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 09:35:08</sys_updated_on>
+    </sys_script_include>
+</record_update>

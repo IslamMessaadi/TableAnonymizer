@@ -84,6 +84,10 @@ anonymizerUtil.prototype = {
 		return evaluator.evaluateScript(patternGr, 'custom_algorithm', null);
 	},
 
+	escapeRegExp:function (str) {
+		return str.replace(/[*+?^${}()|[\]\\]/g, '').trim();
+	},
+
 	anonymize:function(configGr){
 		try{
 			configGr.processing= true;
@@ -111,12 +115,12 @@ anonymizerUtil.prototype = {
 						if(rgx.test(rec[field].getJournalEntry(-1))){
 							counter++;
 							var findings= rec[field].getJournalEntry(-1).match(rgx);
-							findings.length && findings.forEach(function(match){
-								match= match.replace(/\+/gm, "\\+").trim();
-								var cryptedText= patternAlgo == "custom" ? that.evaluatorChatgpt(patternGr, match) : digest[patternAlgo](match);
-								that.anonHAll(rgx, table, field, rec.getValue("sys_id"), match, cryptedText);
-								if(rec.isValidRecord() && !that.hasIt(configGr.sys_id, table, field, rec.sys_id, match)) {
-									that.setHistory(configGr.sys_id, table, field, rec.sys_id, match, cryptedText);
+							findings.length && findings.forEach(function(m){
+								m= that.escapeRegExp(m);
+								var cryptedText= patternAlgo == "custom" ? that.evaluatorChatgpt(patternGr, m) : digest[patternAlgo](m);
+								that.anonHAll(rgx, table, field, rec.getValue("sys_id"), m, cryptedText);
+								if(rec.isValidRecord() && !that.hasIt(configGr.sys_id, table, field, rec.sys_id, m)) {
+									that.setHistory(configGr.sys_id, table, field, rec.sys_id, m, cryptedText);
 								}
 							});
 						}
@@ -125,15 +129,14 @@ anonymizerUtil.prototype = {
 						if(rgx.test(rec[field])){
 							counter++;
 							findings= rec[field].match(rgx);
-							
-							findings.length && findings.forEach(function(match){
-								match= match.replace(/\+/gm, "\\+").trim();
-								var cryptedText= patternAlgo == "custom" ? that.evaluatorChatgpt(patternGr, match) : digest[patternAlgo](match);
-								var ndata= rec[field].replace(new RegExp(match, 'gm'), cryptedText);
+							findings.length && findings.forEach(function(m){
+								m= that.escapeRegExp(m);
+								var cryptedText= patternAlgo == "custom" ? that.evaluatorChatgpt(patternGr, m) : digest[patternAlgo](m);
+								var ndata= rec[field].replace(new RegExp(m, 'gm'), cryptedText);
 								rec.setValue(field, ndata);
 								rec.update();
-								if(rec.isValidRecord() && !that.hasIt(configGr.sys_id, table, field, rec.sys_id, match)) {
-									that.setHistory(configGr.sys_id, table, field, rec.sys_id, match, cryptedText);
+								if(rec.isValidRecord() && !that.hasIt(configGr.sys_id, table, field, rec.sys_id, m)) {
+									that.setHistory(configGr.sys_id, table, field, rec.sys_id, m, cryptedText);
 								}
 							});
 						}
@@ -153,15 +156,36 @@ anonymizerUtil.prototype = {
 
 	setHistory:function(id, table, field, recId, findings, nEncrypted){
 		var historyGr= new GlideRecord("x_307427_table_a_0_history");
-		historyGr.initialize();
-		historyGr.anonymizer= id;
-		historyGr.table= table;
-		historyGr.field= field;
-		historyGr.record= recId;
-		historyGr.status= "anonymized";
-		historyGr.encrypted_value= nEncrypted;
-		historyGr.detected_value= findings;
-		historyGr.insert();
+		historyGr.addEncodedQuery("anonymizer="+id+"^table="+table+"^field="+field+"^record=" + recId+"^detected_value=" + findings);
+		historyGr.query();
+		if(historyGr.next()){
+			/*if(this.JFLIST.indexOf(field) != -1){
+				historyGr.initialize();
+				historyGr.anonymizer= id;
+				historyGr.table= table;
+				historyGr.field= field;
+				historyGr.record= recId;
+				historyGr.status= "anonymized";
+				historyGr.encrypted_value= nEncrypted;
+				historyGr.detected_value= findings; //(/\\/g.test(findings)) ? findings.replace(/\\/g, "") : findings;
+				historyGr.insert();
+			}else{*/
+				historyGr.status= "anonymized";
+				historyGr.encrypted_value= nEncrypted;
+				historyGr.detected_value= findings;
+				historyGr.update();
+			//}
+		}else{
+			historyGr.initialize();
+			historyGr.anonymizer= id;
+			historyGr.table= table;
+			historyGr.field= field;
+			historyGr.record= recId;
+			historyGr.status= "anonymized";
+			historyGr.encrypted_value= nEncrypted;
+			historyGr.detected_value= findings; //(/\\/g.test(findings)) ? findings.replace(/\\/g, "") : findings;
+			historyGr.insert();
+		}
 	},
 	
 	canClearHistory:function(configGr){
@@ -265,66 +289,70 @@ anonymizerUtil.prototype = {
 		configGr.update();
 	},
 
-	anonHL:function(rgx, table, field, recordId, match, cryptedText){
+	anonHL:function(rgx, table, field, recordId, m, cryptedText){
 		
 		var rec = new GlideRecord('sys_history_line');
 		rec.addEncodedQuery('field='+field+'^set.id='+recordId);
 		rec.query();
 		while(rec.next()){
 			if(rgx.test(rec["new"])){
-				rec["new"]= rec["new"].replace(new RegExp(match, 'gm'), cryptedText);
+				rec["new"]= rec["new"].replace(new RegExp(m, 'gm'), cryptedText);
 				rec.update();
 			}
 			if(rgx.test(rec["old"])){
-				rec["old"]= rec["old"].replace(new RegExp(match, 'gm'), cryptedText);
+				rec["old"]= rec["old"].replace(new RegExp(m, 'gm'), cryptedText);
 				rec.update();
 			}
 		}
 	},
 
-	anonHJ:function(rgx, table, field, recordId, match, cryptedText){
+	anonHJ:function(rgx, table, field, recordId, m, cryptedText){
 		var rec = new GlideRecord('sys_journal_field');
 		rec.addEncodedQuery('name='+table+'^element='+field+'^element_id='+recordId);
 		rec.query();
 		while(rec.next()){
 			if(rgx.test(rec.value)){
-				rec.value= rec["value"].replace(new RegExp(match, 'gm'), cryptedText);
+				rec.value= rec["value"].replace(new RegExp(m, 'gm'), cryptedText);
 				rec.update();
 			}
 		}
 	},
 
-	anonHAudit:function(rgx, table, field, recordId, match, cryptedText){
+	anonHAudit:function(rgx, table, field, recordId, m, cryptedText){
 		var rec = new GlideRecord('sys_audit');
 		rec.addEncodedQuery('tablename='+table+'^fieldname='+field+'^documentkey='+recordId);
 		rec.query();
 		while(rec.next()){
-			if(rgx.test(rec.newvalue) || rgx.test(rec.oldvalue)){
-				rec.newvalue= rec["newvalue"].replace(new RegExp(match, 'gm'), cryptedText);
+			if(rgx.test(rec["new"])){
+				rec["newvalue"]= rec["newvalue"].replace(new RegExp(m, 'gm'), cryptedText);
+				rec.update();
+			}
+			if(rgx.test(rec["oldvalue"])){
+				rec["oldvalue"]= rec["oldvalue"].replace(new RegExp(m, 'gm'), cryptedText);
 				rec.update();
 			}
 		}
 	},
 	
-	anonHAll:function(rgx, table, field, recordId, match, cryptedText){
-		this.anonHL(rgx, "", field, recordId, match, cryptedText);
-		this.anonHAudit(rgx, table, field, recordId, match, cryptedText);
-		this.anonHJ(rgx, table, field, recordId, match, cryptedText);
+	anonHAll:function(rgx, table, field, recordId, m, cryptedText){
+		this.anonHL(rgx, "", field, recordId, m, cryptedText);
+		this.anonHAudit(rgx, table, field, recordId, m, cryptedText);
+		this.anonHJ(rgx, table, field, recordId, m, cryptedText);
 	},
-	
+
     type: 'anonymizerUtil'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-02 11:55:34</sys_created_on>
         <sys_id>5a237b3397501110e300d200f153afe7</sys_id>
-        <sys_mod_count>239</sys_mod_count>
+        <sys_mod_count>256</sys_mod_count>
         <sys_name>anonymizerUtil</sys_name>
         <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Table Anonymizer">167a237797101110e300d200f153af12</sys_scope>
         <sys_update_name>sys_script_include_5a237b3397501110e300d200f153afe7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-03-03 21:43:02</sys_updated_on>
+        <sys_updated_on>2023-03-07 09:53:09</sys_updated_on>
     </sys_script_include>
 </record_update>

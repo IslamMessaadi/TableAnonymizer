@@ -6,7 +6,6 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-07-02 16:03:54</sys_created_on>
-            <sys_id>65f1bc4097641110e300d200f153af39</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>status</sys_name>
             <sys_package display_value="Table Anonymizer" source="x_307427_table_a_0">167a237797101110e300d200f153af12</sys_package>
@@ -30,7 +29,6 @@
             <sys_created_on>2022-07-02 16:03:54</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>0fd1708097641110e300d200f153af07</sys_id>
             <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-07-02 16:04:11</sys_updated_on>
@@ -41,40 +39,38 @@
             <element>status</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Deleted</label>
+            <label>De-anonymized</label>
             <language>en</language>
             <name>x_307427_table_a_0_history</name>
             <sequence>200</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-02 16:04:05</sys_created_on>
+            <sys_created_on>2022-07-03 14:05:11</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>6df1784097641110e300d200f153afa2</sys_id>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>5</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-02 16:04:13</sys_updated_on>
-            <value>deleted</value>
+            <sys_updated_on>2023-03-05 12:48:42</sys_updated_on>
+            <value>deanonymized</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
             <element>status</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Journal</label>
+            <label>Deleted</label>
             <language>en</language>
             <name>x_307427_table_a_0_history</name>
             <sequence>300</sequence>
             <synonyms/>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-07-03 14:05:11</sys_created_on>
+            <sys_created_on>2022-07-02 16:04:05</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>b650619097285110e300d200f153af9d</sys_id>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-07-03 14:05:22</sys_updated_on>
-            <value>journal</value>
+            <sys_updated_on>2023-03-05 12:48:39</sys_updated_on>
+            <value>deleted</value>
         </sys_choice>
     </sys_choice>
 </record_update>
